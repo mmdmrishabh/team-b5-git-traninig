@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>KBEATS</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 0.8em;
+            background-color: black;
+            color: white;
+        }
+
+        header>nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            padding: 0.7em;
+        }
+
+        header>nav a,
+        header>nav a:link,
+        header>nav a:visited {
+            text-decoration: none;
+            color: black;
+            padding: 0.7em;
+            border-radius: 0.2em;
+            background-color: white;
+        }
+
+        header>nav a:hover {
+            background-color: rgba(0, 0, 0, 0.85);
+            color: white;
+        }
+
+        header>nav a:active {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        #first {
+            background-color: rgba(0, 0, 0, 0.3);
+            background-image: url(https://res.cloudinary.com/ayaabdelaal/image/upload/v1593005774/Kbeats/sample_audio_zgb02z.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 2em;
+        }
+
+        #whyKbeats {
+            display: inline-block;
+            width: 67%;
+            padding: 1em;
+            margin: 4% 1.3% 1% 2%;
+            color: white;
+        }
+
+        #whyKbeats p {
+            margin-left: 1em;
+            padding: 1em;
+            line-height: 1.2em;
+        }
+
+        #logo {
+            width: 270px;
+            height: 200px;
+            display: inline-block;
+            position: absolute;
+            top: 3%;
+            border-radius: 5em;
+            margin-left: 1em;
+        }
+
+        #logoFooter {
+            display: none;
+        }
+
+        @keyframes bounce {
+            50% {
+                top: 18.5%;
+                box-shadow: 0 0.3em rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        #logo {
+            animation-name: bounce;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+        }
+
+        #second {
+            padding: 1em;
+            display: flex;
+            align-items: center;
+        }
+
+        #eid {
+            display: inline-block;
+            width: 20%;
+            height: auto;
+            border-radius: 20em;
+            margin: 1em;
+            margin-left: 2em;
+        }
+
+        #behind {
+            display: inline-block;
+            margin: 1em;
+            width: 70vw;
+        }
+
+        #behind p {
+            margin-left: 2em;
+            margin: 1em;
+        }
+
+        #second::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #side1 {
+            float: left;
+            display: inline-block;
+            padding: 2em;
+            text-align: right;
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.7);
+            background-image: linear-gradient(to right,
+                    rgba(0, 0, 0, 0.3),
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0.7));
+            color: white;
+            margin: 1em 1em 1em 0;
+        }
+
+        #side1::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #side1 p {
+            margin: 1em;
+            margin-left: 2em;
+        }
+
+        #side2 {
+            float: right;
+            display: inline-block;
+            padding: 2em;
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.7);
+            background-image: linear-gradient(to left,
+                    rgba(0, 0, 0, 0.3),
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0.7));
+            color: white;
+            margin: 1em 0 1em 1em;
+        }
+
+        #side2::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #clear {
+            content: "";
+            clear: both;
+            display: table;
+            width: 100%;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 1em;
+        }
+
+        #socials {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 1em;
+        }
+
+        #socials a {
+            display: inline-block;
+            margin: 1em;
+        }
+
+        #socials img {
+            border-radius: 0.2em;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            #logo {
+                height: 170px;
+                width: 229.5px;
+                top: 20%;
+                animation-duration: 2.5s;
+            }
+
+            @keyframes bounce {
+                50% {
+                    top: 30%;
+                    box-shadow: 0 0.3em rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            #eid {
+                width: 30%;
+            }
+        }
+
+        @media only screen and (max-width: 840px) {
+            #logo {
+                height: 136px;
+                width: 183.6px;
+            }
+
+            #eid {
+                width: 30%;
+            }
+
+            #whyKbeats>p {
+                margin-left: 0.5em;
+            }
+        }
+
+        @media only screen and (max-width: 670px) {
+            #logo {
+                width: 25%;
+            }
+
+            #whyKbeats {
+                margin-left: 0;
+            }
+
+            #whyKbeats>p {
+                margin-left: 0.3em;
+            }
+
+            #eid {
+                height: 70%;
+            }
+        }
+
+        @media only screen and (max-width: 550px) {
+            #logo {
+                display: none;
+            }
+
+            #whyKbeats {
+                width: 100%;
+            }
+
+            #eid {
+                flex-wrap: wrap;
+                display: inline;
+            }
+
+            #logoFooter {
+                display: block;
+                width: 30vw;
+                height: auto;
+                margin: auto;
+                border-radius: 3em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>KBEATS</h1>
+        <nav>
+            <a href="index.html" target="_self">Home</a>
+            <a>Portfolio</a>
+            <a>Contact</a>
+        </nav>
+    </header>
+    <section id="first">
+        <div id="whyKbeats">
+            <h2>Why Kbeats?</h2>
+            <p> By choosing Kbeats you are guranteeingLorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of </p>
+        </div>
+        <img id="logo" alt="kbeats logo"
+            src="https://res.cloudinary.com/ayaabdelaal/image/upload/v1593005773/Kbeats/logo1_yz1yj2.jpg">
+    </section>
+    <section id="second">
+        <img id="eid" alt="Kbeats himself"
+            src="https://res.cloudinary.com/ayaabdelaal/image/upload/v1593005774/Kbeats/eid_xoc7my.jpg">
+        <div id="behind">
+            <h2>Behind the Track</h2>
+            <p>Get to know the man behind the beats.Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                popularised </p>
+        </div>
+    </section>
+    <div id="clear">
+        <section id="side1" class="sideIE">
+            <h2>How can I Place an Order?</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. </p>
+        </section>
+        <section id="side2" class="sideIE">
+            <h2>Follow Kbeats on instagram</h2>
+            <p>@kbeats01</p>
+        </section>
+    </div>
+    <footer>
+        <img id="logoFooter" alt="kbeats logo"
+            src="https://res.cloudinary.com/ayaabdelaal/image/upload/v1593005773/Kbeats/logo1_yz1yj2.jpg">
+        <nav id="socials">
+            <a><img alt="facebook"
+                    src="https://res.cloudinary.com/ayaabdelaal/image/upload/v1593005773/Kbeats/facebook_w2czfb.jpg"></a>
+            <a><img alt="google"
+                    src="https://res.cloudinary.com/ayaabdelaal/image/upload/v1593005773/Kbeats/google_dilmdn.jpg"></a>
+            <a><img alt="twitter"
+                    src="https://res.cloudinary.com/ayaabdelaal/image/upload/v1593005773/Kbeats/twitter_ssfl3o.jpg"></a>
+        </nav>
+    </footer>
+</body>
+
+</html>
